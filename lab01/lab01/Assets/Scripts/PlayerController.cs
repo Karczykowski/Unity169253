@@ -27,6 +27,11 @@ public class PlayerController : MonoBehaviour
         movementY = movementVector.y;
     }
 
+    void OnJump(InputValue movementValue)
+    {
+        rb.AddForce(Vector3.up * 5, ForceMode.Impulse);
+
+    }
     private void FixedUpdate()
     {
         Vector3 movement = new Vector3(movementX, 0.0f, movementY);
